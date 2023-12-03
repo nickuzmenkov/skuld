@@ -1,0 +1,6 @@
+FROM caddy:2.7.5
+
+EXPOSE 80
+EXPOSE 443
+
+COPY skuld/server/Caddyfile /etc/caddy/Caddyfile

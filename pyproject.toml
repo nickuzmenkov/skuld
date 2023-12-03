@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "skuld"
+version = "0.1.0"
+description = ""
+authors = ["Nikita Kuzmenkov <frencwoods@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.api.dependencies]
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+torch = "^2.1.1"
+pillow = "^10.1.0"
+minio = "^7.2.0"
+python-multipart = "^0.0.6"
+numpy = "^1.26.2"
+
+[tool.poetry.group.ui.dependencies]
+requests = "^2.31.0"
+streamlit = "^1.29.0"
+
+[tool.poetry.group.tests]
+optional = true
+
+[tool.poetry.group.tests.dependencies]
+ruff = "^0.1.6"
+pytest = "^7.4.3"
+httpx = "^0.25.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 140
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint]
+select = [
+    "F",  # pyflakes
+    "E",  # pycodestyle error
+    "W",  # pycodestyle warning
+    "I",  # isort
+]

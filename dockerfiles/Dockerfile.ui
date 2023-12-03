@@ -1,0 +1,8 @@
+FROM python:3.11.5-slim
+WORKDIR /skuld
+
+COPY requirements-ui.txt .
+RUN pip install --default-timeout=1000 --prefer-binary --no-cache-dir -r requirements-ui.txt
+
+COPY skuld/ui skuld/ui
+ENTRYPOINT ["streamlit", "run", "--server.fileWatcherType", "none", "skuld/ui/app.py"]
